@@ -36,17 +36,17 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 
 
 
-// 监听content_js的请求，并响应chy
-chrome.extension.onRequest.addListener(
-    function (request, sender, sendResponse) {
-        console.log(sender.tab ?
-            "from a content script:" + sender.tab.url :
-            "from the extension");
-        if (request.greeting == "hello")
-            sendResponse({farewell: "goodbye"});
-        else
-            sendResponse({}); // snub them.
-    });
+// 监听content_js的请求，并响应chyok
+// chrome.extension.onRequest.addListener(
+//     function (request, sender, sendResponse) {
+//         console.log(sender.tab ?
+//             "from a content script:" + sender.tab.url :
+//             "from the extension");
+//         if (request.greeting == "hello")
+//             sendResponse({farewell: "goodbye"});
+//         else
+//             sendResponse({}); // snub them.
+//     });
 
 
 
@@ -55,12 +55,12 @@ chrome.extension.onRequest.addListener(
 
 
 //接收消息
-chrome.extension.onConnect.addListener(function(bac) {
-    bac.onMessage.addListener(function(msg) {
-        console.log("chy");
-        console.log(msg.joke);
-    })
-})
+// chrome.extension.onConnect.addListener(function(bac) {
+//     bac.onMessage.addListener(function(msg) {
+//         console.log("chy");
+//         console.log(msg.joke);
+//     })
+// })
 
 
 

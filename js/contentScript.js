@@ -5,7 +5,7 @@
         // var bac = chrome.extension.connect({name: "bgAndCon"});
         // bac.postMessage({joke: "Knock knock"});
 
-        // 发送请求chy
+        // 发送请求chyok
         // chrome.extension.sendRequest({greeting: "hello"}, function (response) {
         //     // 打印相应
         //     console.log(response.farewell);
