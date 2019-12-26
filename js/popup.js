@@ -11,7 +11,13 @@ if(bg){
             bg.flag.change = 1;
         }
     })
+    $(".exc").click(function () {
+
+    })
 }
+
+
+
 $(document).ready(function(){
     if(bg.flag.begin)
         $(".btn").html("选择完成");

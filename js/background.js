@@ -4,6 +4,7 @@ var flag = {
 };//当前未开始
 /*var d = new Date();
 console.log(d.toLocaleString());*/
+
 setInterval(function () {
     console.log("chy:" + new Date());
     var pop = chrome.extension.getViews({type: 'popup'})[0];
@@ -11,6 +12,7 @@ setInterval(function () {
         console.log(pop.b);
     }
 }, 1000)
+
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     setInterval(function () {
         if (flag.change) {
