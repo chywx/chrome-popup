@@ -13,38 +13,28 @@ console.log(d.toLocaleString());*/
 //     }
 // }, 1000)
 
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    setInterval(function () {
-        let cab = chrome.tabs.connect(tabId);
-        cab.postMessage({mp});
-        // chrome.tabs.connect(tabId);
-        // chrome.tabs.sendMessage(tabId, {mp});
-
-    }, 5000);
-
-    // setInterval(function () {
-    //     if (flag.change) {
-    //         var cab = chrome.tabs.connect(tabId);
-    //         cab.postMessage({flag: flag.begin});
-    //         /*chrome.tabs.connect(tabId);
-    //         chrome.tabs.sendMessage(tabId, { greeting: "hello"});*/
-    //         flag.change = 0;
-    //     }
-    // }, 100);
-});
+// chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+//     setInterval(function () {
+//         let cab = chrome.tabs.connect(tabId);
+//         cab.postMessage({mp});
+//         // chrome.tabs.connect(tabId);
+//         // chrome.tabs.sendMessage(tabId, {mp});
+//
+//     }, 5000);
+// });
 
 
 // 监听content_js的请求，并响应chyok
-// chrome.extension.onRequest.addListener(
-//     function (request, sender, sendResponse) {
-//         console.log(sender.tab ?
-//             "from a content script:" + sender.tab.url :
-//             "from the extension");
-//         if (request.greeting == "hello")
-//             sendResponse({farewell: "goodbye"});
-//         else
-//             sendResponse({}); // snub them.
-//     });
+chrome.extension.onRequest.addListener(
+    function (request, sender, sendResponse) {
+        console.log(sender.tab ?
+            "from a content script:" + sender.tab.url :
+            "from the extension");
+        if (request.greeting == "hello")
+            sendResponse({farewell: "goodbye"});
+        else
+            sendResponse({}); // snub them.
+    });
 
 
 //接收消息
