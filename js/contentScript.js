@@ -6,10 +6,13 @@
         // bac.postMessage({joke: "Knock knock"});
 
         // 发送请求chyok
-        chrome.extension.sendRequest({greeting: "hello"}, function (response) {
-            // 打印相应
-            console.log(response.farewell);
-        });
+        setInterval(function () {
+                chrome.extension.sendRequest({greeting: "hello"}, function (response) {
+                    // 打印相应
+                    console.log(response.farewell);
+
+                });
+        },5000)
 
         // let aaa = 1;
         // //接收消息

@@ -1,8 +1,8 @@
 { 
     "manifest_version": 2, //固定的
-    "name": "chy Extension", //插件名称
+    "name": "down excel", //插件名称
     "version": "1.0", //插件使用的版本
-    "description": "m-pesa extension", //插件的描述
+    "description": "m-pesa down excel", //插件的描述
     "browser_action": { //插件加载后生成图标
         "default_icon": "cc.gif",//图标的图片
         "default_title": "Hello CC", //鼠标移到图标显示的文字 
