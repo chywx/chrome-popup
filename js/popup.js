@@ -12,16 +12,22 @@ if (bg) {
     // })
 
     $(".startListen").click(function () {
-        if (bg.mp == 0) {
-            bg.mp = 1;
-            $(".startListen").html("开始监听");
-        } else {
-            bg.mp = 0;
-            $(".startListen").html("取消监听");
-        }
+        bg.mp = 1;
+        $(".startListen").html("已开始监听");
+        $(".stopListen").html("结束监听")
+        // if (bg.mp == 0) {
+        //     bg.mp = 1;
+        //     $(".startListen").html("开始监听");
+        // } else {
+        //     bg.mp = 0;
+        //     $(".startListen").html("取消监听");
+        // }
+    })
 
-
-        // $(".startListen").html("监听" + bg.mp + "次");
+    $(".stopListen").click(function () {
+        bg.mp = 0;
+        $(".stopListen").html("已结束监听")
+        $(".startListen").html("开始监听");
     })
 
     $(".downloadExcel").click(function () {

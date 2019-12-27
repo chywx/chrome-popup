@@ -15,9 +15,12 @@ console.log(d.toLocaleString());*/
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     setInterval(function () {
-        var cab = chrome.tabs.connect(tabId);
+        let cab = chrome.tabs.connect(tabId);
         cab.postMessage({mp});
-    }, 10000);
+        // chrome.tabs.connect(tabId);
+        // chrome.tabs.sendMessage(tabId, {mp});
+
+    }, 5000);
 
     // setInterval(function () {
     //     if (flag.change) {
@@ -29,11 +32,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     //     }
     // }, 100);
 });
-
-
-
-
-
 
 
 // 监听content_js的请求，并响应chyok
@@ -49,11 +47,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 //     });
 
 
-
-
-
-
-
 //接收消息
 // chrome.extension.onConnect.addListener(function(bac) {
 //     bac.onMessage.addListener(function(msg) {
@@ -61,9 +54,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 //         console.log(msg.joke);
 //     })
 // })
-
-
-
 
 
 //发消息

@@ -16,7 +16,7 @@
         chrome.extension.onConnect.addListener(function (cab) {
             cab.onMessage.addListener(function (msg) {
                 if (msg.mp == 1) {
-                    console.log("hello", new Date(), aaa++);
+                    console.log("hello", msg.mp, new Date(), aaa++);
                     // $.ajax({
                     //     url: "https://bet-api.bangbet.com/api/bet/tournament/list",
                     //     data: {sportCategoryId: "sr:category:1"},
