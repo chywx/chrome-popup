@@ -46,7 +46,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577325476086</updated>
-      <workItem from="1577325477182" duration="34506000" />
+      <workItem from="1577325477182" duration="38634000" />
+      <workItem from="1577671027557" duration="11284000" />
     </task>
     <task id="LOCAL-00001" summary="发送接收消息">
       <created>1577362465445</created>
@@ -76,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577421222000</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="popup与background通信">
+      <created>1577434359529</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1577434359529</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,7 +95,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -97,6 +107,7 @@
     <MESSAGE value="发送接收消息" />
     <MESSAGE value="略过" />
     <MESSAGE value="chyok" />
-    <option name="LAST_COMMIT_MESSAGE" value="chyok" />
+    <MESSAGE value="popup与background通信" />
+    <option name="LAST_COMMIT_MESSAGE" value="popup与background通信" />
   </component>
 </project>

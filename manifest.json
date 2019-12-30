@@ -20,7 +20,8 @@
     }, 
      "content_scripts": [{  //对页面内容进行操作的脚本
 //         "matches": ["http://*/*","https://*/*"],  //满足什么条件执行该插件
-         "matches": ["https://org.ke.m-pesa.com/*","https://www.baidu.com/*"],  //满足什么条件执行该插件
+//         ,
+         "matches": ["https://www.baidu.com/*","https://org.ke.m-pesa.com/*"],  //满足什么条件执行该插件
          "js": ["js/jquery-1.9.1.min.js", "js/contentScript.js"],
          "run_at": "document_start",  //在document加载时执行该脚本
          "all_frames": true
