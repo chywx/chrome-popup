@@ -13,6 +13,8 @@ if (bg) {
 
     $(".startListen").click(function () {
         bg.mp = 1;
+        bg.BMECID = $("#BMECID").val();
+        bg.BMEWebToken = $("#BMEWebToken").val();
         $(".startListen").html("已开始监听");
         $(".stopListen").html("结束监听")
         // if (bg.mp == 0) {
@@ -25,8 +27,8 @@ if (bg) {
     })
 
     $(".stopListen").click(function () {
-        bg.mp = 0;
-        $(".stopListen").html("已结束监听")
+        bg.mp = 2;
+        $(".stopListen").html("已结束监听");
         $(".startListen").html("开始监听");
     })
 

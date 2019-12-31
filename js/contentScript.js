@@ -15,15 +15,72 @@
         // },5000)
 
         // 向background发送数据
-        let iii = 0;
-        setInterval(function () {
-            chrome.runtime.sendMessage(
-                {greeting: '你好，我是content-script呀，我主动发消息给后台！' + ++iii},
-                function (response) {
-                    console.log('收到来自后台的回复：' + response);
+
+        let status = 0;
+
+        let BMECID = "";
+
+        let BMEWebToken = "";
+
+        let flat = true;
+
+        setInterval(sendMsg, 5000);
+
+        function sendMsg() {
+            if (status == 0) {
+                chrome.runtime.sendMessage(
+                    {greeting: '你好，我是content-script1！'},
+                    function (response) {
+                        // console.log(JSON.stringify(response));
+                        if (response.mp == 1) {
+                            BMECID = response.BMECID;
+                            BMEWebToken = response.BMEWebToken;
+                            if(status == 0){
+                                status = 1;
+                                iCount = setInterval(opera, 10000);
+                            }
+                        }
+                    }
+                );
+            }
+        }
+
+        setInterval(sendSop, 5000);
+
+        function sendSop() {
+            if (status == 1) {
+                chrome.runtime.sendMessage(
+                    {greeting: '你好，我是content-script2'},
+                    function (response) {
+                        if (response.mp == 2) {
+                            clearInterval(iCount);
+                            status = 0;
+                        }
+                    }
+                );
+            }
+        }
+
+        function opera() {
+            console.log("开始调用接口");
+            var dt = new Date().getTime();
+            $.ajax({
+                url: "https://org.ke.m-pesa.com/business.action?BMECID=" + BMECID + "&BMETimestamp=" + dt + "&BMEWebToken=" + BMEWebToken,
+                data: {
+                    "bmeEvent.mode": "render",
+                    "bmeEvent.validation": "true",
+                    "bmeEvent.regionid": "",
+                    "bmeEvent.targetid": "please",
+                    "bmeEvent.service": "queryBroadcastForOperator",
+                    "BMEParam": "%{#BMEModel}",
+                    "bmeEvent.action": "orgIndexPagestartPagequeryBroadcastForOperator('%{#BMEModel}')"
+                },
+                type: "POST",
+                success: function (data) {
+                    console.log(data);
                 }
-            );
-        }, 5000);
+            })
+        }
 
 
         // 监听background传过来的数据dahai
