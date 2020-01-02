@@ -14,7 +14,6 @@ if (bg) {
     $(".startListen").click(function () {
         bg.mp = 1;
         bg.BMECID = $("#BMECID").val();
-        bg.BMEWebToken = $("#BMEWebToken").val();
         $(".startListen").html("已开始监听");
         $(".stopListen").html("结束监听")
         // if (bg.mp == 0) {
@@ -34,6 +33,16 @@ if (bg) {
 
     $(".downloadExcel").click(function () {
         // $(".exc").html("监听开始");
+        chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+            let BMECID = $("#BMECID").val();
+            chrome.tabs.sendMessage(tabs[0].id, {message: "calculate", greeting: "您好","BMECID":BMECID}, function (response) {
+                if (typeof response != 'undefined') {
+                    console.log(JSON.stringify(response));
+                } else {
+                    console.log("response为空=>" + response);
+                }
+            });//end  sendMessage
+        });
     })
 }
 

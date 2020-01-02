@@ -4,7 +4,6 @@ var flag = {
 };//当前未开始
 var mp = 0;
 var BMECID = "";
-var BMEWebToken = "";
 /*var d = new Date();
 console.log(d.toLocaleString());*/
 
@@ -42,7 +41,7 @@ console.log(d.toLocaleString());*/
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     // if (mp == 1) {
     //     sendResponse({mp, BMECID, BMEWebToken});//做出回应
-    sendResponse({"mp": mp, "BMECID": BMECID, "BMEWebToken": BMEWebToken});
+    sendResponse({"mp": mp, "BMECID": BMECID});
     // }
     // sendResponse({"msg": '我已收到你的消息：' + JSON.stringify(request)});//做出回应
 });
